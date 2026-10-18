@@ -1,0 +1,19 @@
+{
+  "name": "Yantramanava - Karnataka AI Heritage Robot",
+  "short_name": "Yantramanava",
+  "description": "AI Tourist Guide Robot for Karnataka Tourism featuring Voice AI, Verified RAG Heritage Guides, and MediaPipe Sign Language Accessibility.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070a12",
+  "theme_color": "#070a12",
+  "orientation": "portrait",
+  "categories": ["travel", "education", "lifestyle"],
+  "icons": [
+    {
+      "src": "/pwa-icon.svg",
+      "sizes": "512x512 192x192 128x128 64x64",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

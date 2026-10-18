@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="50%" stop-color="#060913"/>
+      <stop offset="100%" stop-color="#020408"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Rounded App Icon Background -->
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect width="504" height="504" x="4" y="4" rx="108" fill="none" stroke="url(#gold)" stroke-width="8" opacity="0.6"/>
+  
+  <!-- Ambient Glow Circle -->
+  <circle cx="256" cy="240" r="140" fill="#f59e0b" opacity="0.12" filter="url(#glow)"/>
+
+  <!-- Robot Head / Helmet -->
+  <rect x="146" y="140" width="220" height="190" rx="48" fill="#1e293b" stroke="url(#gold)" stroke-width="8"/>
+  
+  <!-- Visor / Eye Display -->
+  <rect x="176" y="180" width="160" height="70" rx="24" fill="#030712" stroke="url(#cyan)" stroke-width="5"/>
+  <circle cx="216" cy="215" r="16" fill="url(#cyan)" filter="url(#glow)"/>
+  <circle cx="296" cy="215" r="16" fill="url(#cyan)" filter="url(#glow)"/>
+  
+  <!-- Antenna -->
+  <line x1="256" y1="140" x2="256" y2="85" stroke="url(#gold)" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="256" cy="75" r="16" fill="url(#gold)" filter="url(#glow)"/>
+
+  <!-- Speaker Grill / Mouth -->
+  <line x1="206" y1="285" x2="306" y2="285" stroke="url(#gold)" stroke-width="6" stroke-linecap="round"/>
+  <line x1="226" y1="300" x2="286" y2="300" stroke="url(#gold)" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Crown / Mysore Royal Kalasa ornament -->
+  <path d="M226 140 L256 100 L286 140 Z" fill="url(#gold)"/>
+
+  <!-- Soundwave / Tourism Wave below -->
+  <path d="M116 390 Q186 350 256 390 T396 390" fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+  <path d="M146 420 Q201 390 256 420 T366 420" fill="none" stroke="url(#cyan)" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Brand Subtitle -->
+  <text x="256" y="475" text-anchor="middle" font-family="'Outfit', sans-serif" font-weight="800" font-size="30" fill="#f8fafc" letter-spacing="4">YANTRAMANAVA</text>
+</svg>
