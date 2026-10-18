@@ -28,13 +28,15 @@ export const RobotAvatar = ({ robotState, activeLanguage, isSpeaking, currentSpe
 
       {/* Futuristic Robot Canvas / SVG Container */}
       <div className="robot-canvas-wrapper">
-        {/* Outer Pulsing Aura Glow */}
-        <div 
-          className="robot-aura-glow"
-          style={{ background: stateColor }}
-        />
-
-        <svg width="150" height="185" viewBox="0 0 180 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="robot-svg">
+        <svg 
+          width="150" 
+          height="185" 
+          viewBox="0 0 180 220" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg" 
+          className="robot-svg"
+          style={{ filter: `drop-shadow(0 0 18px ${stateColor}99)` }}
+        >
           {/* Head Antennas */}
           <rect x="85" y="10" width="10" height="25" rx="5" fill="#334155" />
           <circle cx="90" cy="10" r="8" fill={stateColor}>
