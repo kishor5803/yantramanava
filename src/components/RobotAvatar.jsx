@@ -1,13 +1,6 @@
 import React from 'react';
 
 export const RobotAvatar = ({ robotState, activeLanguage, isSpeaking, currentSpeechText }) => {
-  // State colors:
-  // idle: gold
-  // listening: cyan
-  // thinking: purple
-  // speaking: emerald
-  // gesture: pink
-
   const getStateColor = () => {
     switch (robotState) {
       case 'listening': return '#06b6d4'; // Cyan
@@ -21,30 +14,30 @@ export const RobotAvatar = ({ robotState, activeLanguage, isSpeaking, currentSpe
   const stateColor = getStateColor();
 
   return (
-    <div className="relative flex flex-col items-center justify-center p-6 text-center">
+    <div className="robot-avatar-container">
       {/* Speech Bubble floating above Robot */}
       {currentSpeechText && (
-        <div className="mb-4 max-w-md animate-fade-in relative z-10 glass-panel p-4 text-left border-l-4" style={{ borderColor: stateColor }}>
-          <div className="text-xs uppercase font-bold tracking-wider mb-1 flex items-center justify-between" style={{ color: stateColor }}>
+        <div className="robot-speech-card" style={{ borderLeftColor: stateColor }}>
+          <div className="robot-speech-header" style={{ color: stateColor }}>
             <span>🤖 Yantramanava ({activeLanguage.toUpperCase()})</span>
-            {isSpeaking && <span className="flex gap-1 items-center text-[10px] text-emerald-400">● LIVE VOICE</span>}
+            {isSpeaking && <span className="live-voice-indicator">● LIVE VOICE</span>}
           </div>
-          <p className="text-sm font-medium text-slate-100">{currentSpeechText}</p>
+          <p className="robot-speech-text">{currentSpeechText}</p>
         </div>
       )}
 
       {/* Futuristic Robot Canvas / SVG Container */}
-      <div className="relative w-48 h-56 flex items-center justify-center animate-float">
+      <div className="robot-canvas-wrapper">
         {/* Outer Pulsing Aura Glow */}
         <div 
-          className="absolute inset-0 rounded-full blur-2xl opacity-40 transition-all duration-500"
+          className="robot-aura-glow"
           style={{ background: stateColor }}
         />
 
-        <svg width="180" height="220" viewBox="0 0 180 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="150" height="185" viewBox="0 0 180 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="robot-svg">
           {/* Head Antennas */}
           <rect x="85" y="10" width="10" height="25" rx="5" fill="#334155" />
-          <circle cx="90" cy="10" r="8" fill={stateColor} className="animate-pulse">
+          <circle cx="90" cy="10" r="8" fill={stateColor}>
             <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite" />
           </circle>
           
@@ -98,13 +91,10 @@ export const RobotAvatar = ({ robotState, activeLanguage, isSpeaking, currentSpe
                 </rect>
               </g>
             ) : robotState === 'listening' ? (
-              // Listening Curve
               <path d="M60 98 Q90 110 120 98" stroke={stateColor} strokeWidth="4" strokeLinecap="round" fill="none" />
             ) : robotState === 'gesture' ? (
-              // Surprised / Gesture Circle
               <circle cx="90" cy="98" r="7" fill="none" stroke={stateColor} strokeWidth="3" />
             ) : (
-              // Friendly Smile
               <path d="M65 96 Q90 108 115 96" stroke={stateColor} strokeWidth="4" strokeLinecap="round" fill="none" />
             )}
           </g>
@@ -123,10 +113,10 @@ export const RobotAvatar = ({ robotState, activeLanguage, isSpeaking, currentSpe
         </svg>
       </div>
 
-      {/* State Status Pills */}
-      <div className="mt-3 flex items-center gap-2">
-        <span className="badge" style={{ backgroundColor: `${stateColor}22`, color: stateColor, border: `1px solid ${stateColor}66` }}>
-          <span className="w-2 h-2 rounded-full animate-ping" style={{ background: stateColor }} />
+      {/* State Status Pill */}
+      <div className="robot-badge-row">
+        <span className="robot-state-badge" style={{ backgroundColor: `${stateColor}1a`, color: stateColor, borderColor: `${stateColor}55` }}>
+          <span className="badge-dot" style={{ backgroundColor: stateColor }} />
           {robotState.toUpperCase()} MODE
         </span>
       </div>

@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 
 export const VoiceWaveform = ({ isSpeaking, isListening, robotState }) => {
-  const [bars, setBars] = useState([12, 24, 38, 18, 42, 28, 50, 20, 34, 16, 45, 22, 30, 15, 40]);
+  const [bars, setBars] = useState([12, 24, 38, 18, 42, 28, 36, 20, 34, 16, 40, 22, 30, 15, 38, 20, 28, 14]);
 
   useEffect(() => {
     let interval;
     if (isSpeaking || isListening) {
       interval = setInterval(() => {
         setBars(
-          Array.from({ length: 24 }, () => Math.floor(Math.random() * 45) + 8)
+          Array.from({ length: 18 }, () => Math.floor(Math.random() * 32) + 6)
         );
-      }, 100);
+      }, 120);
     } else {
-      setBars([8, 12, 16, 14, 18, 12, 20, 14, 16, 12, 14, 10, 8, 12, 14, 10, 8, 12, 16, 14, 18, 12, 10, 8]);
+      setBars([6, 10, 14, 12, 16, 10, 18, 12, 14, 10, 14, 8, 10, 12, 8, 10, 8, 6]);
     }
     return () => clearInterval(interval);
   }, [isSpeaking, isListening]);
@@ -20,22 +20,22 @@ export const VoiceWaveform = ({ isSpeaking, isListening, robotState }) => {
   const activeColor = isSpeaking ? '#10b981' : isListening ? '#06b6d4' : '#f59e0b';
 
   return (
-    <div className="w-full flex flex-col items-center justify-center my-3">
-      <div className="flex items-center justify-center gap-1.5 h-12 w-full px-6 bg-slate-950/60 rounded-xl border border-slate-800/80">
+    <div className="waveform-container">
+      <div className="waveform-bar-track">
         {bars.map((h, i) => (
           <div
             key={i}
-            className="w-1.5 rounded-full transition-all duration-150"
+            className="waveform-bar"
             style={{
               height: `${h}px`,
               backgroundColor: (isSpeaking || isListening) ? activeColor : '#334155',
-              boxShadow: (isSpeaking || isListening) ? `0 0 10px ${activeColor}` : 'none'
+              boxShadow: (isSpeaking || isListening) ? `0 0 8px ${activeColor}88` : 'none'
             }}
           />
         ))}
       </div>
-      <span className="text-[10px] font-mono tracking-widest text-slate-400 mt-1 uppercase">
-        {isSpeaking ? "🔊 REACTIVE VOICE WAVEFORM (OUTPUT SOUND)" : isListening ? "🎙️ AUDIO INPUT WAVEFORM (LISTENING)" : "⚡ STANDBY WAVEFORM ENGINE"}
+      <span className="waveform-caption">
+        {isSpeaking ? "🔊 VOICE OUTPUT SYNTHESIS" : isListening ? "🎙️ AUDIO INPUT ACTIVE" : "⚡ STANDBY ENGINE"}
       </span>
     </div>
   );
