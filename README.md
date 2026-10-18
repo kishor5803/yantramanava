@@ -1,13 +1,18 @@
 # 🤖 Yantramanava (ಯಂತ್ರಮಾನವ)
 ### AI Karnataka Heritage Tour Guide & Accessibility Robot
 
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live%20App-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://yantramanava.vercel.app)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-22c55e?style=for-the-badge&logo=github&logoColor=white)](https://kishor5803.github.io/yantramanava/)
+
 [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![React](https://img.shields.io/badge/React-19-61dafb.svg)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-8-646cff.svg)](https://vitejs.dev/)
 [![PWA](https://img.shields.io/badge/PWA-Ready-f59e0b.svg)](https://web.dev/progressive-web-apps/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-**Yantramanava** is an official AI Tour Guide & Accessibility Robot engineered for **Karnataka Tourism**. It bridges historical preservation with modern AI accessibility, featuring verified Anti-Fake Guide RAG facts, multilingual voice narration (English & Kannada), and MediaPipe-powered sign language recognition for deaf and mute tourists.
+**Live Web Application:**
+- 🌐 **Primary Production (Vercel)**: [https://yantramanava.vercel.app](https://yantramanava.vercel.app)
+- 🌐 **Backup Host (GitHub Pages)**: [https://kishor5803.github.io/yantramanava/](https://kishor5803.github.io/yantramanava/)
 
 ---
 
